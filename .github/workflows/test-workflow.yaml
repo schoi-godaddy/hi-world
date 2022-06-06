@@ -13,8 +13,12 @@ jobs:
       - name: step 2 - print secret from env
         run: echo $secret
         env:
+          secret: ${{ secrets.WAHT_IS_IT }}
+      - name: step 3 - print secret from env
+        run: echo $secret
+        env:
           secret: skateboard
-      - name: step 3 - print secret as plain
+      - name: step 4 - print secret as plain
         run: echo "skateboard"
 
 
