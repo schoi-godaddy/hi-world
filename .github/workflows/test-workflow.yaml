@@ -1,0 +1,21 @@
+name: Test Workflow
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  secret_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step 1 - print secret.<>
+        run: echo ${{ secrets.WAHT_IS_IT }}
+      - name: step 2 - print secret from env
+        run: echo $secret
+        env:
+          secret: skateboard
+      - name: step 3 - print secret as plain
+        run: echo "skateboard"
+
+
+
